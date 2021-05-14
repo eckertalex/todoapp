@@ -1,0 +1,34 @@
+[
+  {
+    "text": "Minor, unavoidable errand",
+    "completed": true
+  },
+  {
+    "text": "Todo that my wife has been bugging me to complete for weeks",
+    "completed": true
+  },
+  {
+    "text": "Overambitious goal that I will endlessly excogitate, but never get around to",
+    "completed": true
+  },
+  {
+    "text": "Make a to do list",
+    "completed": true
+  },
+  {
+    "text": "Thing I'm not going to do",
+    "completed": true
+  },
+  {
+    "text": "Thing I've been meaning to do for the past 5 years",
+    "completed": true
+  },
+  {
+    "text": "Realize you've already completed 2 things on the list",
+    "completed": false
+  },
+  {
+    "text": "Reward yourself with a nap",
+    "completed": false
+  }
+]

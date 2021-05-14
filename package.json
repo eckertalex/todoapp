@@ -1,0 +1,94 @@
+{
+  "name": "todoapp",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Alexander Eckert <eckertalex@pm.me> (https://eckertalex.dev/)",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "preserve": "npm run build",
+    "preanalyze": "npm run build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watch=false",
+    "serve": "serve -s build",
+    "lint": "eslint --ignore-path .gitignore --cache-location node_modules/.cache/eslint --ext .js,.jsx,.ts,.tsx --fix .",
+    "format": "prettier --write \"**/*.+(js|json|tx|tsx|css|md|mdx|html)\"",
+    "check-types": "tsc",
+    "validate": "npm-run-all --parallel check-types format lint test:coverage build serve",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check-types && pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "eslint --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "framer-motion": "^4.1.16",
+    "history": "^5.0.0",
+    "lucide-react": "^0.15.12",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-error-boundary": "^3.1.3",
+    "react-helmet-async": "^1.0.7",
+    "react-query": "^3.16.0",
+    "react-router": "^6.0.0-beta.0",
+    "react-router-dom": "^6.0.0-beta.0",
+    "web-vitals": "^1.1.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/react-hooks": "^5.1.2",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "msw": "^0.28.2",
+    "nanoid": "^3.1.20",
+    "node-match-path": "^0.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
+    "react-scripts": "^4.0.3",
+    "react-test-renderer": "^17.0.2",
+    "serve": "^11.3.2",
+    "source-map-explorer": "^2.5.2",
+    "typescript": "^4.2.4"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "volta": {
+    "node": "14.16.1",
+    "yarn": "1.22.10"
+  }
+}
